@@ -56,7 +56,6 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            # 'C:\\Users\\Дональд\\Documents\\Python_Projects\\inventoryManager\\trydjango\\templates'
             './templates',
         ],
         'APP_DIRS': True,
