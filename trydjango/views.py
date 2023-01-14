@@ -7,23 +7,23 @@ from django.template.loader import render_to_string
 from articles.models import Article
 
 
-def home_view(request):
-	"""
-	Take in a request and
-	Return html as response
-	"""
+def article_home_view(request):
+	return HttpResponse
+
+
+def home_view(request, *args, **kwargs):
+
 	random_id = random.randint(1, 4)
 	article_obj = Article.objects.get(id=random_id)
+	article_queryset = Article.objects.all()
 	context = {
+		"object_list": article_queryset,
+		"object": article_obj,
 		"title": article_obj.title,
 		"id": article_obj.id,
 		"content": article_obj.content
 	}
-	HTML_STRING = render_to_string("home_view.html", context=context)
-	# HTML_STRING = """
-	# <h1>Hello {title} (id: {id})</h1>
-	# <h1>Hello {content}!</h1>
-	# """.format(**context)
 
-	return HttpResponse(HTML_STRING)
+	html_string = render_to_string("home-view.html", context=context)
 
+	return HttpResponse(html_string)

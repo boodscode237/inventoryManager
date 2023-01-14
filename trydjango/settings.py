@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'articles'
+    'articles',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            './templates',
+            BASE_DIR / "templates",
+            "/home/kodnashion/PycharmProjects/inventoryManager/trydjango/templates"
         ],
         'APP_DIRS': True,
         'OPTIONS': {
